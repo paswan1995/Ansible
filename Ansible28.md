@@ -15,6 +15,10 @@
 
 ## Setup of Ansible
 
+* If a user wants to login any Linux operating system. There is 2 ways
+*   1= Username and Password (`Key Based Authentication`) so in this `Key Based Authentication` we have 2 ways a) Public key b) Private key (``Symmetric vs. Asymmetric Encryption=?``) 
+*   2= 
+
 * ## Ansible Control Node
      * This component takes the inputs mentioned above to execute playbooks on the nodes.
      * This Node is a linux vm or physical machine and we install ansible.
