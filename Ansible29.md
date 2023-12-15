@@ -21,9 +21,6 @@
 
 * Linux machines allow us to login using ssh protocol and configurations of ssh are present in 
 ## to know the how many users are present in the machine `cat /etc/passwd`
- 
-  
-   ![preview](images/a23.png)
 * The field __PasswordAuthentication__ should be __yes__.
  ``sudo vi /etc/ssh/sshd_config`
 * Change __PasswordAuthentication__ to __yes__
