@@ -17,11 +17,13 @@
 * ## Username and Password Authentication
 * ## Overview
 ![preview](images/a19.png)
-![preview](images/a23.png)
+![preview](images/a20.png)
+
 * Linux machines allow us to login using ssh protocol and configurations of ssh are present in 
 ## to know the how many users are present in the machine `cat /etc/passwd`
-  ![preview](images/a20.png)
+ 
   ![preview](images/a21.png)
+   ![preview](images/a23.png)
 * The field __PasswordAuthentication__ should be __yes__.
  ``sudo vi /etc/ssh/sshd_config`
 * Change __PasswordAuthentication__ to __yes__
