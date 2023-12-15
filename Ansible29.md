@@ -25,15 +25,14 @@
   ``sudo systemctl restart sshd``   
 * Create a user called as jenkins 
 * to create user 
-  ```
-  * sudo useradd <username>
-to set user password or change `sudo passwd <username>` aftr this you can set the password
+  `` sudo useradd <username>``
+* to set user password or change `sudo passwd <username>` aftr this you can set the password.
 * sudo adduser <username> 
  this will directly ask you to set password.
 `sudo adduser jenkins`
 `su jenkins` su= switch-user and jenkins= username 
-* to delete user `sudo userdel <username>` 
-  ```
+* to delete user 
+* `sudo userdel <username>` 
 ![preview](images/a20.png)
 ![preview](images/a21.png)
 ![preview](images/a22.png)
