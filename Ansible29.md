@@ -18,12 +18,26 @@
 * ## Overview
 ![preview](images/a19.png)
 * Linux machines allow us to login using ssh protocol and configurations of ssh are present in 
-* `/etc/ssh/sshd_config` 
-* The field `PasswordAuthentication` should be yes.
-* ``sudo nano /etc/ssh/sshd_config`
+* ## to know the how many users are present in the machine `cat /etc/passwd`
+* The field __PasswordAuthentication__ should be __yes__.
+* ``sudo vi /etc/ssh/sshd_config`
 # Change PasswordAuthentication to yes
   ``sudo systemctl restart sshd``   
-* Create a user called as jenkins
+* Create a user called as jenkins 
+* to create user 
+  ```
+  * sudo useradd <username>
+to set user password or change `sudo passwd <username>` aftr this you can set the password
+* sudo adduser <username> 
+ this will directly ask you to set password.
+`sudo adduser jenkins`
+`su jenkins` su= switch-user and jenkins= username 
+* to delete user `sudo userdel <username>` 
+  ```
+![preview](images/a20.png)
+![preview](images/a21.png)
+![preview](images/a22.png)
+
 
 * Lets make jenkins administrator
 * `sudo visudo`
