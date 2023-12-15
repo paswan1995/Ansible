@@ -1,4 +1,4 @@
-## Installing Ansible
+## Installing Ansible (ansible --help)
 * Ansible can be installed in two ways
           * Package Managers
           * Python:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible
@@ -17,8 +17,6 @@
 * ## Username and Password Authentication
 * ## Overview
 ![preview](images/a19.png)
-![preview](images/a20.png)
-
 * Linux machines allow us to login using ssh protocol and configurations of ssh are present in 
 ## to know the how many users are present in the machine `cat /etc/passwd`
 * The field __PasswordAuthentication__ should be __yes__.
@@ -26,7 +24,7 @@
 * It means---> ``sudo vi /etc/ssh/sshd_config`` __Enabling Password based Authentication__
  ``sudo vi /etc/ssh/sshd_config`
 * Change __PasswordAuthentication__ to __yes__
-  ``sudo systemctl restart sshd`` 
+  ``sudo systemctl restart sshd`` or  ``sudo service sshd restart`` 
   ![preview](images/a21.png)
   ![preview](images/a22.png)  
   ![preview](images/a23.png)
@@ -55,10 +53,26 @@
 * ![preview](images/a25.png)
 * Lets ask not to prompt for password for jenkins user
 * ![preview](images/a27.png)
-* You can now able to login into your system throug users name also 
+* You can now able to login into your system throug username also 
   ``ssh jenkins@18.60.50.230`` 
     ssh username@ip-address 
-  ![preview](images/a28.png)
-* 
-
-* Do the same stuff for node 2 
+  ![preview](images/a28.png) 
+* ## Do the same stuff for node 2 
+* `.\ it means current folder/directory`
+* ![preview](images/a29.png)
+* ![preview](images/a30.png)
+* public ip is to connect with external address 
+* if your 2 machines are in same network so we should use private ip
+* Once you restart your machine public ip changes every time . If you restart your machine 10 times so it would change 10 public ip but __private ip is constent or it will same ip__ that's why we always use private ip for internal communications.
+* __Now we are going to connect Ansible control node to node1__ 
+* ![preview](images/a20.png) 
+* ![preview](images/a31.png)
+* If the username is same 2 or 3 or both machines so give only ip address. ex. ssh 172.31.39.203 it connect after giving it user password.
+* ![preview](images/a32.png)
+* In `vi inventory`  paste other machine private ip in vi editor
+* ``ansible -i inventory -m ping all``
+* ``ansible -i inventory -k -m ping all``
+*  it means i am asking to the ansible to check whatever machine is present in that inventory file can you connect with them or not.
+* This is Ansible ping. (ansible --help) no need to learn command just write in terminal it show you every command Ansible related.
+* ![preview](images/a33.png)
+--------------***************************--------------------------------------
