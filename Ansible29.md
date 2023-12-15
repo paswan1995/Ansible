@@ -44,7 +44,10 @@
 * to delete user we use  `sudo userdel <username>` 
 
 
-* Lets make jenkins administrator
+* Lets make ``jenkins`` administrator
 * `sudo visudo`
+* ![preview](images/a26.png)
+* ![preview](images/a25.png)
+* 
 * Lets ask not to prompt for password for jenkins user
 * Do the same stuff for node 2 
