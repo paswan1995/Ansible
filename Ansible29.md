@@ -22,12 +22,17 @@
 * Linux machines allow us to login using ssh protocol and configurations of ssh are present in 
 ## to know the how many users are present in the machine `cat /etc/passwd`
  
-  ![preview](images/a21.png)
+  
    ![preview](images/a23.png)
 * The field __PasswordAuthentication__ should be __yes__.
  ``sudo vi /etc/ssh/sshd_config`
 * Change __PasswordAuthentication__ to __yes__
-  ``sudo systemctl restart sshd``   
+  ``sudo systemctl restart sshd`` 
+  ![preview](images/a21.png)
+  ![preview](images/a22.png)  
+  ![preview](images/a23.png)
+  ![preview](images/a24.png)
+  !
 * Create a user called as jenkins 
 
 * For creating user we have 2 commands and that is given below
@@ -41,9 +46,8 @@
  `su jenkins` su= switch-user and jenkins= username 
 * to delete user we use  `sudo userdel <username>` 
 
-![preview](images/a22.png)
+
 * Lets make jenkins administrator
 * `sudo visudo`
 * Lets ask not to prompt for password for jenkins user
 * Do the same stuff for node 2 
-* ![preview](images/a20.png) 
