@@ -22,6 +22,8 @@
 * Linux machines allow us to login using ssh protocol and configurations of ssh are present in 
 ## to know the how many users are present in the machine `cat /etc/passwd`
 * The field __PasswordAuthentication__ should be __yes__.
+* In `vi editor` you can search also though `/PasswordAuthentication` it will show you same line. it will save your time.
+* It means---> ``sudo vi /etc/ssh/sshd_config`` __Enabling Password based Authentication__
  ``sudo vi /etc/ssh/sshd_config`
 * Change __PasswordAuthentication__ to __yes__
   ``sudo systemctl restart sshd`` 
@@ -30,24 +32,33 @@
   ![preview](images/a23.png)
   ![preview](images/a24.png)
   !
-* Create a user called as jenkins 
+* Create a user called as test1 
 
 * For creating user we have 2 commands and that is given below
 <1>
    `` sudo useradd <username>`` 
+   ``sudo adduser test1``
+   ``sudo passwd test1``
 * To set user password or change `sudo passwd <username>` aftr this you can set the password.
-* sudo adduser <username> 
+* sudo adduser <username>  it will ask you to set password.
  this will directly ask you to set password.
 <2>
- ``sudo adduser jenkins``
- `su jenkins` su= switch-user and jenkins= username 
-* to delete user we use  `sudo userdel <username>` 
-
-
+* Create a user called as jenkins
+  ``sudo adduser jenkins``
+  `su jenkins` su= switch-user and jenkins= username 
+* to delete user we use 
+* ``sudo userdel <username>`` 
+ 
 * Lets make ``jenkins`` administrator
 * `sudo visudo`
 * ![preview](images/a26.png)
 * ![preview](images/a25.png)
-* 
 * Lets ask not to prompt for password for jenkins user
+* ![preview](images/a27.png)
+* You can now able to login into your system throug users name also 
+  ``ssh jenkins@18.60.50.230`` 
+    ssh username@ip-address 
+  ![preview](images/a28.png)
+* 
+
 * Do the same stuff for node 2 
