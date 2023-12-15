@@ -75,4 +75,5 @@
 *  it means i am asking to the ansible to check whatever machine is present in that inventory file can you connect with them or not.
 * This is Ansible ping. (ansible --help) no need to learn command just write in terminal it show you every command Ansible related.
 * ![preview](images/a33.png)
---------------***************************--------------------------------------
+* Tips: If u do ``sudo visudo`` then only Ansible control node connect to other machine(node1,node2,so on...) and it will not connect only doing ``sudo vi /etc/ssh/sshd_config``.
+_________________________________________________________________________________
