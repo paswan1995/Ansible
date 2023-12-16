@@ -12,4 +12,5 @@
 * ![preview](images/a41.png)
 * Copy the public key from Ansible control node to node 
 * ![preview](images/a34.png)
+* ![preview](images/a42.png) `id_rsa` is a private file `id_rsa.pub` is public file.
 * 
