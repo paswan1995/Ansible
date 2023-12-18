@@ -20,8 +20,8 @@
          <li>green
          "'
 
-         
-       * Object/map/directory
+
+* Object/map/directory
         
         `yaml`
 
@@ -36,7 +36,8 @@
 * JSON/YAML use KEY-VALUE (Name Value) pairs.
 * YAML Basic key value syntax is `key: value`
 * Sample YAML ( QUALITY THOUGHT)
-```
+ 
+``
 ---
 name: QualityThought
 contact:
@@ -54,10 +55,10 @@ contact:
       building: nilgiri
       city: Hydrebad
   
-```
+``
 
 * Good books to read
-```
+``
 ---
 Purpose: Good Books to read
 Books: 
@@ -74,14 +75,14 @@ Books:
     ISBN: 978-0091883768
     Language: English
     
-```
+``
 
 * Write a yaml describing your favorite movies/holiday destinations
 * ## Ansible Playbook
        * for official docs: https://docs.ansible.com/ansible/2.8/user_guide/playbooks_intro.html
        * The structure of the YAML is defined by Ansible
   
-```
+``
 ---
 - name: <purpose>
   hosts: <where to execute>
@@ -96,10 +97,12 @@ Books:
         <param-1>: <value-1>
         <param-n>: <value-n>
         state: <desired-state> 
-```
+``
+
 ## Lets write a playbook for Apache installation
 
 * Manual steps
+
 ```
 sudo apt update
 sudo apt install apache2 -y
