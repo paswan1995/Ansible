@@ -2,8 +2,8 @@
 
 * It is a Data Description Format.
 * It is widely used to store 
-       *  Data
-       *  Confugrations
+       * Data
+       * Confugrations
 * Data can be categorized into 2 types  
 
        * Simple/Scalar: 
@@ -13,32 +13,31 @@
           
 * Complex 
        * list/array (Plural) 
-         "'yaml
+         “`yaml
          colors:</li>
          <li>red</li>
          <li>blue</li>
          <li>green
-         "'
-
+         “`
 
 * Object/map/directory
         
-        `yaml`
+`yaml`
 
-        `address`
+`address`
 
-        `flatno: 407`
+`flatno: 407`
 
-        `building: ramnivas`
+`building: ramnivas`
 
-        `city: Hyderabad`
+`city: Hyderabad`
 
 * JSON/YAML use KEY-VALUE (Name Value) pairs.
 * YAML Basic key value syntax is `key: value`
 * Sample YAML ( QUALITY THOUGHT)
  
-``
----
+ ```
+ ---
 name: QualityThought
 contact:
   email:
@@ -54,11 +53,11 @@ contact:
     - flat: 307
       building: nilgiri
       city: Hydrebad
-  
-``
+```
 
-* Good books to read
-``
+## Good books to read
+
+```
 ---
 Purpose: Good Books to read
 Books: 
@@ -74,15 +73,39 @@ Books:
     Author: Spencer Johnson
     ISBN: 978-0091883768
     Language: English
-    
-``
+```
 
 * Write a yaml describing your favorite movies/holiday destinations
-* ## Ansible Playbook
-       * for official docs: https://docs.ansible.com/ansible/2.8/user_guide/playbooks_intro.html
-       * The structure of the YAML is defined by Ansible
-  
-``
+
+ ```
+ ---
+ movies:
+   - name:
+     starcast:
+       - 
+       -
+     technical:
+       director:
+       producer:
+     release: 
+   - 
+   -
+
+ destinations:
+   - name:
+     modeoftransport: 
+     spots:
+       -
+       -
+       -
+```
+ 
+* YAML files are generally stored with extensions .yaml or .yml
+ 
+## Ansible Playbook
+   * for official docs: https://docs.ansible.com/ansible/2.8/user_guide/playbooks_intro.html
+   * The structure of the YAML is defined by Ansible```
+```
 ---
 - name: <purpose>
   hosts: <where to execute>
@@ -97,7 +120,7 @@ Books:
         <param-1>: <value-1>
         <param-n>: <value-n>
         state: <desired-state> 
-``
+```
 
 ## Lets write a playbook for Apache installation
 
