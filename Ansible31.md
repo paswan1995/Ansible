@@ -4,8 +4,9 @@
 * It is widely used to store 
        * Data
        * Confugrations
-* Data can be categorized into 2 types  
-
+ 
+* Data can be categorized into 2 types 
+ 
        * Simple/Scalar: 
           * Text `name: Ansible`
           * Number `version: 2.13`
@@ -132,6 +133,11 @@ sudo apt install apache2 -y
 
 ```
 
+(1) ![preview](images/a50.png)
+(2) ![preview](images/a52.png)
+(3) ![preview](images/a53.png)
+(4) ![preview](images/a54.png)
+(5) ![preview](images/a55.png)
 * Google `apt in ansible` for the module page: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
 * Go through parameters and fill in the necessary parameters
 * Playbook:https://github.com/asquarezone/AnsibleZone/commit/2dbc83aba6c9b9b59d9025dfc345c2e13ae0f012  for the changes done
@@ -140,6 +146,6 @@ sudo apt install apache2 -y
 
 
 
-* In YAML `true or yes and false or no is a same thing`.
+* In YAML `true or yes` and `false or no`  is a same thing.
 * Before `-` you have to give `2 space` and After `-` you have to give `1 space` .
 * You can write multiple playbook in one file by entering `---` below every playbook. 
