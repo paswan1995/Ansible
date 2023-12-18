@@ -1,7 +1,7 @@
 ## YAML
 
 * It is a Data Description Format.
-* It is widely used to store 
+* It is widely used to store. 
        * Data
        * Confugrations
  
@@ -12,7 +12,7 @@
           * Number `version: 2.13`
           * Boolean `Opensource: yes`    
           
-* Complex 
+       * Complex 
        * list/array (Plural) 
          “`yaml
          colors:</li>
@@ -21,17 +21,17 @@
          <li>green
          “`
 
-* Object/map/directory
+       * Object/map/directory
         
-`yaml`
+       `yaml`
 
-`address`
+       `address`
 
-`flatno: 407`
+       `flatno: 407`
 
-`building: ramnivas`
+       `building: ramnivas`
 
-`city: Hyderabad`
+      `city: Hyderabad`
 
 * JSON/YAML use KEY-VALUE (Name Value) pairs.
 * YAML Basic key value syntax is `key: value`
@@ -134,10 +134,15 @@ sudo apt install apache2 -y
 ```
 
 (1) ![preview](images/a50.png)
+
 (2) ![preview](images/a52.png)
+
 (3) ![preview](images/a53.png)
+
 (4) ![preview](images/a54.png)
+
 (5) ![preview](images/a55.png)
+
 * Google `apt in ansible` for the module page: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
 * Go through parameters and fill in the necessary parameters
 * Playbook:https://github.com/asquarezone/AnsibleZone/commit/2dbc83aba6c9b9b59d9025dfc345c2e13ae0f012  for the changes done
