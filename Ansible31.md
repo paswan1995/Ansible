@@ -15,8 +15,8 @@
        * list/array (Plural) 
          "'yaml
          colors:</li>
-         <li>red<li>
-         <li>blue<li>
+         <li>red</li>
+         <li>blue</li>
          <li>green
          "'
        * Object/map/directory
