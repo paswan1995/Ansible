@@ -7,14 +7,14 @@
  
 * Data can be categorized into 2 types 
  
-       * Simple/Scalar: 
+       (1) Simple/Scalar: 
           * Text `name: Ansible`
           * Number `version: 2.13`
           * Boolean `Opensource: yes`    
           
-       * Complex 
+       (2) Complex 
        * list/array (Plural) 
-         “`yaml
+            “`yaml
          colors:</li>
          <li>red</li>
          <li>blue</li>
@@ -147,10 +147,22 @@ sudo apt install apache2 -y
 * Go through parameters and fill in the necessary parameters
 * Playbook:https://github.com/asquarezone/AnsibleZone/commit/2dbc83aba6c9b9b59d9025dfc345c2e13ae0f012  for the changes done
 * Executing ansible playbook: https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html
-* 
-
-
-
+* __Lets try to install apche2 server on ubuntu (hosts server)__
+* Now in Ansible control Node (ACN) create folder called `apache-file`
+  `mkdir apache-file` `cd apache-file` `vi apache-install.yaml` write playbook in .yaml and then `vi hosts` put __hosts ip address means node1,2or node3 etc__
+  (6) ![preview](images/a57.png)
+* (7) ![preview](images/a56.png)
+* (8) ![preview](images/a58.png)
+* (9) ![preview](images/a60.png)
+* you can delete that installed software via `sudo apt-get/ apt purge apache2` __software name after purfe__
+* (10) ![preview](images/a59.png)
+* Now re-execute the same command and ansible will not install apache2 but since apache2 exists it doesn’t change  any thing
+* Now install ngnix
+* ![preview](images/a62.png)
+* ![preview](images/a63.png)
+* (11) ![preview](images/a61.png)
 * In YAML `true or yes` and `false or no`  is a same thing.
 * Before `-` you have to give `2 space` and After `-` you have to give `1 space` .
 * You can write multiple playbook in one file by entering `---` below every playbook. 
+* __Yellow means Ansible has done somework in server `changed=1`__
+___________________________________________________________________________________________________________________          
