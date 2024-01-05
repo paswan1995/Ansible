@@ -4,6 +4,7 @@ __Ansible Contd….__
        * Ensure your manual steps are working
        * For each steps try to find a module which can help expressing desired state. 
 * __Manual Steps__
+ 
 ```
 sudo apt update
 sudo apt-cache search openjdk
@@ -58,6 +59,7 @@ sudo systemctl enable --now tomcat
 * Check the service status:
 sudo systemctl status tomcat
 * The output should show that the Tomcat server is enabled and running:
+
 ```
 ● tomcat.service - Tomcat 10 servlet container
      Loaded: loaded (/etc/systemd/system/tomcat.service; enabled; vendor preset: enabled)
@@ -65,9 +67,7 @@ sudo systemctl status tomcat
     Process: 5124 ExecStart=/opt/tomcat/latest/bin/startup.sh (code=exited, status=0/SUCCESS)
    Main PID: 5131 (java)
 ...
-```
 
-```
 * You can start, stop, and restart Tomcat the same as any other systemd service:
   
 ```
