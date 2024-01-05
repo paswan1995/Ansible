@@ -25,7 +25,9 @@ __Creating SystemD Unit File__
 *Open your text editor and create a tomcat.service unit file in the /etc/systemd/system/ directory:
 sudo nano /etc/systemd/system/tomcat.service
 * Paste the following configuration:
+
 ```
+``
 [Unit]
 Description=Tomcat 10 servlet container
 After=network.target
@@ -76,3 +78,34 @@ sudo systemctl stop tomcat
 sudo systemctl restart tomcat
 
 ```
+![preview](images/a64.png)
+![preview](images/a65.png)
+## Now for web interface follow the docs Refer:https://linuxize.com/post/how-to-install-tomcat-10-on-ubuntu-22-04/
+![preview](images/a66.png)
+![preview](images/a67.png)
+![preview](images/a68.png)
+ __Manual steps is completed here__
+
+ ## Ansible Playbook to automate the above steps
+__note: don't do oneshot installtion at a time , do one by one / in steps 1 after 1.__
+* create 2 instance then give
+* This is Ansible Control Node:--> `sudo vi /etc/ssh/sshd_config, sudo systemctl restart sshd, sudo useradd devops,  sudo visudo, install ansible on (Ansible control node), ssh-keygen, ssh-copy-id devop@ip address of node,` now check via `ssh 172-31-38-192 (ip address of node)`. 
+* Create an inventory with one entry i.e. node private ip `echo 172-31-38-192 > inventory` here echo node's ipaddress > inventory. 
+* This is Node:--> `sudo vi /etc/ssh/sshd_config, sudo systemctl restart sshd, sudo useradd devops,  sudo visudo,`.
+  
+* 1st step install java on host server
+* `su devops` create 1 directory `mkdir tomcat, cd tomcat, vi tomcat.yml and vi hosts` 
+* ![preview](images/a69.png)
+* ![preview](images/a70.png)
+* ![preview](images/a71.png)
+* ![preview](images/a72.png)
+* To enable verbose logging of ansible `-v to -vvvv` it will gives you more details about project 
+* if u want to understand what Ansible is doing so increase your verbose level via `-v to -vvvvv` .
+* Now we are supposed to create a user called tomcat
+       * with home directory in /opt/tomcat
+       * with shell /bin/false
+       * with group tomcat (same as username)     
+* Module in ansible for useradd Refer:https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
+* we will continue 3jan.....
+
+
