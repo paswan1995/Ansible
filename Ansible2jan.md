@@ -106,6 +106,31 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
        * with shell /bin/false
        * with group tomcat (same as username)     
 * Module in ansible for useradd Refer:https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
-* we will continue 3jan.....
+* we will continue.....
+
+* Lets try to install tomcat 10 on ubuntu 22.04 refer:https://linuxize.com/post/how-to-install-tomcat-10-on-ubuntu-22-04/
+* On execution of the playbook we got an issue with tomcat group not present
+* ![preview](images/a74.webp)
+* refer here: for the changes to fix the group not existing and rerun the playbook
+* ![preview](images/a75.png)
+* ![preview](images/a76.png)
+* to check group or user is created or not `cat /etc/group or for user cat /etc/passwd`
+* ![preview](images/a77.png)
+* download tomcat 10.1.17 now `VERSION=10.1.17` and paste there link https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz
+* ![preview](images/a78.png)
+* ![preview](images/a79.png)
+* to go the `node1` and check in `/tmp` folder is it present or not.
+* ![preview](images/a80.png)
+* Once the Tomcat tar file is downloaded, extract it to the /opt/tomcat directory and we are replacing the extra download step and use remote src in unarchiveremove extra step
+* ![preview](images/a81.png)
+* ![preview](images/a82.png)
+* ![preview](images/a83.png)
+* it is visible now in node1
+* ![preview](images/a84.png)
+* ![preview](images/a85.png)
+* the changes made to change ownership and create the symbolic link  and we’ll create a symbolic link named latest, that will point to the Tomcat installation directory:
+* 
+* 
+* 
 
 
