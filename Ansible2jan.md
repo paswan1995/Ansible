@@ -128,8 +128,15 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
 * it is visible now in node1
 * ![preview](images/a84.png)
 * ![preview](images/a85.png)
-* the changes made to change ownership and create the symbolic link  and we’ll create a symbolic link named latest, that will point to the Tomcat installation directory:
-* 
+* the changes made to change ownership and create the symbolic link and we’ll create a symbolic link named latest, that will point to the Tomcat installation directory:
+*  __`__recurse set only when the state is directory__`__
+* ![preview](images/a86.png)
+* ![preview](images/a87.png)
+* ![preview](images/a88.png)
+* for setting recursive permissions on the folder.
+* ![preview](images/a89.png)
+* ![preview](images/a90.png)
+* ![preview](images/a91.png)
 * 
 * 
 

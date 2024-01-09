@@ -33,17 +33,17 @@
       ansible.builtin.file: 
         src: /opt/tomcat/apache-tomcat-10.1.17  
         dest: /opt/tomcat/latest 
-        recurse: yes
         group: tomcat 
         owner: tomcat
         state: link
     - name: change owner and group permissions
       ansible.builtin.file:
         dest: /opt/tomcat
+        recurse: yes                                         ##  ask
         owner: tomcat
         group: tomcat 
-        recurse: yes                                    ## y we use ask
-        state: directory                                ## y we use ask
-        
+        state: directory                                     ##  ask
+                                      
+
 for setting recursive permissions on the folder.
 The next step to be automated is sudo sh -c 'chmod +x
