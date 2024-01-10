@@ -43,7 +43,6 @@
         owner: tomcat
         group: tomcat 
         state: directory                                     ##  ask
-                                      
-
-for setting recursive permissions on the folder.
-The next step to be automated is sudo sh -c 'chmod +x
+    - name: execute shell
+      ansible.builtin.command: sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'    
+                                  

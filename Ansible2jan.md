@@ -137,7 +137,19 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
 * ![preview](images/a89.png)
 * ![preview](images/a90.png)
 * ![preview](images/a91.png)
-* 
-* 
+* to know `sh` files for that `ls *.sh` command
+* The next step to be automated is `__sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'__` . Here there are approximately 12 files in 10.1.17 version to be changed.
+* ![preview](images/a92.png)
+* ansible -m ping all that is `ad hoc` command
+*  when  you use commmand or shell module the problem with that is it run every time when you run ansible playbook which is not a good thing, idealy we should avoiding those kind of things.
+*  For automating above lets use `ansible.builtin.shell or command `, these module are not idempotent i.e. it gets executed every time when ansible playbook is executed (this should be last resort). This needs to be fixed but for now lets use the command directly. 
+* ![preview](images/a93.png)
+* ![preview](images/a94.png) __ask__?
+* ![preview](images/a95.png)
+* Iam getting error via automating till above picture. 
+* but when i do manually then its execute via manually see the below picture.
+* ![preview](images/a96.png) __ask__?
+* for the changes to fix the shell file permissions.
+  
 
 
