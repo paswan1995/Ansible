@@ -160,6 +160,7 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
 * Now we need to reload the daemon, enable and start the service
 * ![preview](images/a100.png) node1
   ![preview](images/a101.png)
+  ![preview](images/a105.png)
 * Now access tomcat (Ensure 8080 port is opened in security groups)
 * ![preview](images/a102.png)
 * ![preview](images/a103.png)
@@ -167,7 +168,14 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
 * Ansible playbook which we have written works only for ubuntu, we need to extend this to work for other linux distributions.
 * If we need to make this playbook work for future versions of tomcat it will not as we have hardcoded 10.1.18
 * If we want extend this playbook to install any version of java
-* 
+* for this tomcat i stored all files in APACHE-BASIC-->tomcat like `context.xml, hostmanager-context.xml,tomcat-users.xml, tomcat.service ` .
+* ## Exercises
+* nstall lamp stack on ubuntu 20.04 (skip ufw and mysql) https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
+* Rather than virtual hosts file create a file info.php in /var/www/html/info.php 
+* `<?php
+phpinfo();
+?>` 
+-------------------------------------------------------------------------------------------------------------------
 
 
 
