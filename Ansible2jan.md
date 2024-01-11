@@ -169,6 +169,7 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
 * If we need to make this playbook work for future versions of tomcat it will not as we have hardcoded 10.1.18
 * If we want extend this playbook to install any version of java
 * for this tomcat i stored all files in APACHE-BASIC-->tomcat like `context.xml, hostmanager-context.xml,tomcat-users.xml, tomcat.service ` .
+* this one is a sir's link https://github.com/asquarezone/AnsibleZone/commit/d182c71ea0a6681468ddc9364e083f9b5c0deaf8#diff-7831bfdd35bc1be57d266d61d83f168f6a626cd9ff22eb9f686f4edeccf559e5
 * ## Exercises
 * nstall lamp stack on ubuntu 20.04 (skip ufw and mysql) https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
 * Rather than virtual hosts file create a file info.php in /var/www/html/info.php 
