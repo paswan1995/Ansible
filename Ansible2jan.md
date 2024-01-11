@@ -153,7 +153,10 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
 * __The above problem is resolved via recreate instance, takes tomcat v10.1.18 and resolved__.
 * ![preview](images/a97.png)
 * ![preview](images/a98.png)
-* ![preview](images/a99.png)
+* ![preview](images/a99.png) delete this
+* if your file is in local system and you want to copy on remote server then use `__src__` but if the file is present in remote server and you want to copy on remote server then use `__remote_src__`
+* now Creating SystemD Unit File..
+* 
 * 
 * 
   

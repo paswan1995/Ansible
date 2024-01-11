@@ -44,4 +44,4 @@
         state: directory  
     - name: shell script executable 
       ansible.builtin.shell: sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
-    -
+    
