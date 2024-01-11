@@ -150,6 +150,12 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
 * but when i do manually then its execute via manually see the below picture.
 * ![preview](images/a96.png) __ask__?
 * for the changes to fix the shell file permissions.
+* __The above problem is resolved via recreate instance, takes tomcat v10.1.18 and resolved__.
+* ![preview](images/a97.png)
+* ![preview](images/a98.png)
+* ![preview](images/a99.png)
+* 
+* 
   
 
 

@@ -20,13 +20,13 @@
         home: /opt/tomcat
         shell: /bin/false
         state: present 
-    - name: download tomcat 10.1.17  ## url (dont use this 1 its take 1 extra steps)
+    - name: download tomcat 10.1.17  ## url (dont use this 1 it takes 1 extra steps)
       ansible.builtin.get_url:
         url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz
-        dest: /tmp//apache-tomcat-10.1.17.tar.gz
+        dest: /tmp/apache-tomcat-10.1.17.tar.gz
     - name: extract tomcat file 10.1.17   ## url (so use this 1 not upper 1)  (ask y upper 1 or this 1)
       ansible.builtin.unarchive:      
-        src: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz 
+        src: /tmp/apache-tomcat-10.1.17.tar.gz 
         remote_src: yes
         dest: /opt/tomcat 
     - name: create symbolic link 
@@ -44,5 +44,5 @@
         group: tomcat 
         state: directory                                     ##  ask
     - name: execute shell
-      ansible.builtin.command: sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'    
+      ansible.builtin.command: sudo 'chmod +x /opt/tomcat/latest/bin/*.sh'    
                                   

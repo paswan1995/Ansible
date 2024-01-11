@@ -1,0 +1,47 @@
+---
+- name: tomcat installation on ubuntu 
+  hosts: all
+  become: yes
+  tasks:
+    - name: install java 
+      ansible.builtin.apt:
+        name: openjdk-11-jdk 
+        state: present
+    - name: create a group tomcat  
+      ansible.builtin.group:
+        name: tomcat 
+        state: present 
+    - name: create a user tomcat 
+      ansible.builtin.user:
+        name: tomcat 
+        create_home: yes
+        group: tomcat 
+        home: /opt/tomcat
+        shell: /bin/false
+        state: present 
+    - name: download tomcat url
+      ansible.builtin.get_url: 
+        url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.18/bin/apache-tomcat-10.1.18.tar.gz
+        dest: /tmp/apache-tomcat-10.1.18.tar.gz 
+    - name: extract it to the /opt/tomcat
+      ansible.builtin.unarchive: 
+        src: /tmp/apache-tomcat-10.1.18.tar.gz
+        dest: /opt/tomcat
+        remote_src: yes
+    - name: create symbolic link
+      ansible.builtin.file:
+        src: /opt/tomcat/apache-tomcat-10.1.18
+        dest: /opt/tomcat/latest
+        owner: tomcat
+        group: tomcat
+        state: link
+    - name: Change the directory ownership to user and group tomcat
+      ansible.builtin.file:
+        dest: /opt/tomcat
+        owner: tomcat 
+        group: tomcat  
+        recurse: yes
+        state: directory  
+    - name: shell script executable 
+      ansible.builtin.shell: sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
+    -
