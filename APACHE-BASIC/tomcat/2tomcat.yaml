@@ -44,4 +44,66 @@
         state: directory  
     - name: shell script executable 
       ansible.builtin.shell: sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
+    - name: creating systemd unit File
+      ansible.builtin.copy:
+        src: tomcat.service  
+        group: tomcat
+        owner: tomcat 
+        dest: /etc/systemd/system/tomcat.service 
+    - name: systemctl daemon-reload
+      ansible.builtin.systemd_service:
+        name: tomcat.service 
+        daemon_reload: yes
+        state: restarted
+    - name: systemctl enable
+      ansible.builtin.systemd_service: 
+        name: tomcat.service
+        daemon_reload: yes
+        state: restarted
+    - name: systemctl status
+      ansible.builtin.systemd_service: 
+        name: tomcat.service
+        daemon_reload: yes
+        state: restarted
+    - name: systemctl enable
+      ansible.builtin.systemd_service: 
+        name: tomcat.service
+        daemon_reload: yes
+        enabled: yes 
+        state: started
+    - name: Configuring Tomcat Web Management Interface
+      ansible.builtin.copy:
+        src: tomcat-users.xml
+        dest: /opt/tomcat/latest/conf/tomcat-users.xml
+        group: tomcat 
+        owner: tomcat 
+        remote_src: yes
+    - name: Manager app
+      ansible.builtin.copy:
+        src: context.xml
+        dest: /opt/tomcat/latest/webapps/manager/META-INF/context.xml
+        group: tomcat 
+        owner: tomcat 
+    - name: Host Manager app
+      ansible.builtin.copy:
+        src: hostmanager-context.xml
+        dest: /opt/tomcat/latest/webapps/host-manager/META-INF/context.xml
+        group: tomcat 
+        owner: tomcat
+    - name: systemctl restart service 
+      ansible.builtin.systemd_service:
+        name: tomcat.service
+        daemon_reload: yes
+        state: restarted 
+
+         
+
+        
+      
+
+
+         
+        
+        
+      
     

@@ -153,12 +153,24 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
 * __The above problem is resolved via recreate instance, takes tomcat v10.1.18 and resolved__.
 * ![preview](images/a97.png)
 * ![preview](images/a98.png)
-* ![preview](images/a99.png) delete this
+* ![preview](images/a99.png)
 * if your file is in local system and you want to copy on remote server then use `__src__` but if the file is present in remote server and you want to copy on remote server then use `__remote_src__`
 * now Creating SystemD Unit File..
+* We need to copy tomcat.service file from ansible control node to remote nodes. Refer Here: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html for the module used .
+* Now we need to reload the daemon, enable and start the service
+* ![preview](images/a100.png) node1
+  ![preview](images/a101.png)
+* Now access tomcat (Ensure 8080 port is opened in security groups)
+* ![preview](images/a102.png)
+* ![preview](images/a103.png)
+* ![preview](images/a104.png)
+* Ansible playbook which we have written works only for ubuntu, we need to extend this to work for other linux distributions.
+* If we need to make this playbook work for future versions of tomcat it will not as we have hardcoded 10.1.18
+* If we want extend this playbook to install any version of java
 * 
-* 
-* 
+
+
+
   
 
 
