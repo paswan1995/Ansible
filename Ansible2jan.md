@@ -12,6 +12,7 @@ sudo apt install openjdk-11-jdk -y
 java -version
 * __Creating a System User__
 sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
+here `__-m=create a home -U=create a group -d=home directory path__ `
 VERSION=10.1.17
 wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz -P /tmp
 * Once the Tomcat tar file is downloaded, extract it to the /opt/tomcat directory:
