@@ -177,6 +177,8 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
 * `<?php
 phpinfo();
 ?>` 
+* classnotes link: https://directdevops.blog/2023/01/04/devops-classroomnotes-04-jan-2023/
+* refer here: https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html 
 -------------------------------------------------------------------------------------------------------------------
 
 

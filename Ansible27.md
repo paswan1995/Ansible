@@ -68,7 +68,7 @@
   
 * Ansible is an open source software developed in python.
 * Ansible expects python to be installed on nodes.
-
+refer here: https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html
 --------------------------------------------------------------------------
 
 

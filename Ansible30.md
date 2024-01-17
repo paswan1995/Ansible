@@ -50,5 +50,5 @@
 * Ensure you have valid manual steps (which are working)
 * For each manual step find out an equivalent module
 * for YAML and Json Tutorial:https://youtube.com/watch?v=ggOmHlnhPaM&list=PLuVH8Jaq3mLuqXuGs6aeqxhuvCYSzB1kT&index=6
-
+refer here: https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html
 ------------------------------------------------------------------------------------------------------------------ 

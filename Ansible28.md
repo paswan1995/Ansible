@@ -65,5 +65,6 @@
 * `ansible --version`
 * Note:
 Installing Necessary Softwares on your System. Refer here:- https://www.youtube.com/watch?v=9guzVbZPGuw&t=701s
+refer here: https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html
 ------------------------------------------------------------------------------
             

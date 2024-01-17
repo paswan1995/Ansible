@@ -1,0 +1,51 @@
+---
+- name: installation of java on tomcat 
+  hosts: all
+  become: yes
+  vars: 
+    java_package_name: openjdk-11-jdk
+    user_name: tomcat 
+    group_name: tomcat 
+    user_home: /opt/tomcat
+    user_shell: /bin/false 
+    tomcat_version: "10.1.18"
+    tomcat_major_version: "10"  
+    tomcat_service_name: tomcat.service 
+  tasks: 
+    - name: Java installation
+      ansible.builtin.apt: 
+        name: {{ java_package_name }}
+        update_cache: yes
+        state: present 
+    - name: create a group 
+      ansible.builtin.group:
+        name: {{ group_name }}
+        state: present 
+    - name: create user 
+      ansible.builtin.user: 
+        name: {{ user_name }} 
+        create_home: yes 
+        group: {{ user_group }}
+        home: {{ user_home }}
+        shell: {{ user_shell }}
+        state: present 
+    - name: tomcat download url
+      ansible.builtin.get_url:
+        url: https://dlcdn.apache.org/tomcat/{{ tomcat_major_version }}/v{{ tomcat_version }}/bin/apache-tomcat-{{tomcat_version }}.tar.gz
+        dest: /tmp 
+    - name: extract tomcat in /opt/tomcat
+      ansible.builtin.unarchive:
+      src: /tmp/apache-tomcat
+      dest: {{ user_home }}
+      remote_src: yes
+    - name: create symbolic link 
+      ansible.builtin.file: 
+        src: /opt/tomcat/apache-tomcat-${tomcat_version}
+        group: {{ group_name }}
+        owner: {{ tomcat }}
+        dest: /opt/tomcat/latest
+        state: link 
+        
+
+        
+  

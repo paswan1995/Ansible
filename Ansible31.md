@@ -165,4 +165,5 @@ sudo apt install apache2 -y
 * Before `-` you have to give `2 space` and After `-` you have to give `1 space` .
 * You can write multiple playbook in one file by entering `---` below every playbook. 
 * __Yellow means Ansible has done somework in server `changed=1`__
+* refer here: https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html
 ___________________________________________________________________________________________________________________          
