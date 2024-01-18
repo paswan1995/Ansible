@@ -16,21 +16,21 @@
 * To represent the variations among those different systems, you can create variables with standard YAML syntax, including lists and dictionaries. 
 * refer here: https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html#using-variables
 * Lets create a simple playbook
-* `
-* ---
-* - name: checking variable demo
-*   vars: 
-*     name: anil
-*   hosts: all
-*   tasks:
-*     - name: print variable value
-*       debug: 
-*         var: name
-*     - name: print something else
-*       debug: 
-*         var: "hello, {{ name }}"
-* `
-* 
+ `
+ ---
+ - name: checking variable demo
+   vars: 
+     name: anil
+   hosts: all
+   tasks:
+     - name: print variable value
+       debug: 
+         var: name
+     - name: print something else
+       debug: 
+         var: "hello, {{ name }}"
+ `
+ 
 ![preview](images/a106.png)
 ![preview](images/a107.png)
 
