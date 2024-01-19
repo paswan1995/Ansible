@@ -14,38 +14,97 @@
   tasks: 
     - name: Java installation
       ansible.builtin.apt: 
-        name: {{ java_package_name }}
+        name: "{{ java_package_name }}"
         update_cache: yes
         state: present 
-    - name: create a group 
+    - name: create a tomcat group 
       ansible.builtin.group:
-        name: {{ group_name }}
+        name: "{{ group_name }}"
         state: present 
-    - name: create user 
+    - name: create a tomcat user 
       ansible.builtin.user: 
-        name: {{ user_name }} 
+        name: "{{ user_name }}" 
         create_home: yes 
-        group: {{ user_group }}
-        home: {{ user_home }}
-        shell: {{ user_shell }}
+        group: "{{ group_name }}"
+        home: "{{ user_home }}"
+        shell: "{{ user_shell }}"
         state: present 
     - name: tomcat download url
       ansible.builtin.get_url:
-        url: https://dlcdn.apache.org/tomcat/{{ tomcat_major_version }}/v{{ tomcat_version }}/bin/apache-tomcat-{{tomcat_version }}.tar.gz
-        dest: /tmp 
-    - name: extract tomcat in /opt/tomcat
+        url: https://dlcdn.apache.org/tomcat/{{ tomcat_major_version }}/v{{ tomcat_version }}/bin/apache-tomcat-{{ tomcat_version }}.tar.gz
+        dest: /tmp//apache-tomcat-${{ tomcat_version }}.tar.gz
+    - name: extract tomcat in user home 
       ansible.builtin.unarchive:
-      src: /tmp/apache-tomcat
-      dest: {{ user_home }}
+      src: /tmp/apache-tomcat-${{ tomcat_version }}.tar.gz
+      dest: "{{ user_home }}"
       remote_src: yes
     - name: create symbolic link 
       ansible.builtin.file: 
-        src: /opt/tomcat/apache-tomcat-${tomcat_version}
-        group: {{ group_name }}
-        owner: {{ tomcat }}
+        src: "{{ user_home }}/apache-tomcat-{{ tomcat_version }}"
+        group: "{{ group_name }}"
+        owner: "{{ user_name }}"
         dest: /opt/tomcat/latest
         state: link 
-        
-
-        
+    - name: Change the ownership 
+      ansible.builtin.file: 
+        group: "{{ group_name }}"
+        owner: "{{ user_name }}"
+        dest: "{{ user_home }}"
+        recurse: yes
+        state: directory
+    - name: Tomcat bin directory must be executable
+      ansible.builtin.shell: "sudo sh -c 'chmod +x {{ user_home }}/latest/bin/*.sh'"
+    - name: Creating SystemD Unit File 
+      ansible.builtin.copy:
+        src: tomcat2.service
+        dest: /etc/systemd/system/tomcat2.service
+        group: "{{ group_name }}"
+        owner: "{{ user_name }}"
+        remote_src: yes
+    - name: reload daemon and start tomcat
+      ansible.builtin.systemd_service: 
+        name: "{{ tomcat_service_name }}"
+        enabled: yes 
+        daemon_reload: yes
+        state: restarted
+    - name: systemctl enable
+      ansible.builtin.systemd_service: 
+        name: "{{ tomcat_service_name }}"
+        daemon_reload: yes
+        state: restarted
+    - name: systemctl status
+      ansible.builtin.systemd_service: 
+        name: "{{ tomcat_service_name }}"
+        daemon_reload: yes
+        state: restarted
+    - name: systemctl enable
+      ansible.builtin.systemd_service: 
+        name: "{{ tomcat_service_name }}"
+        daemon_reload: yes
+        enabled: yes 
+        state: started
+    - name: copy tomcat-users.xml
+      ansible.builtin.copy: 
+        src: tomcat-users.xml
+        dest: "{{ user_home }}/latest/conf/tomcat-users.xml"
+        group: "{{ group_name }}"
+        owner: "{{ user_name }}"
+    - name: for the manager app 
+      ansible.builtin.copy:
+        src: context.xml
+        dest: "{{ user_home }}/latest/webapps/manager/META-INF/context.xml"
+        group: "{{ group_name }}"
+        owner: "{{ user_name }}"
+    - name: for host manager 
+      ansible.builtin.copy:
+        src: hostmanager-context.xml
+        dest: "{{ user_home }}/latest/webapps/host-manager/META-INF/context.xml"
+        group: "{{ group_name }}" 
+        owner: "{{ user_name }}"
+    - name: systemctl restart tomcat
+      ansible.builtin.systemd_service: 
+         name: "{{ tomcat_service_name }}"
+         daemon_reload: yes
+         enabled: yes 
+         state: restarted
   
