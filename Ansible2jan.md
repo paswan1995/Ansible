@@ -92,7 +92,7 @@ __note: don't do oneshot installtion at a time , do one by one / in steps 1 afte
 * create 2 instance then give
 * This is Ansible Control Node:--> `sudo vi /etc/ssh/sshd_config, sudo systemctl restart sshd, sudo useradd devops,  sudo visudo, install ansible on (Ansible control node), ssh-keygen, ssh-copy-id devop@ip address of node,` now check via `ssh 172-31-38-192 (ip address of node)`. 
 * Create an inventory with one entry i.e. node private ip `echo 172-31-38-192 > inventory` here echo node's ipaddress > inventory. 
-* This is Node:--> `sudo vi /etc/ssh/sshd_config, sudo systemctl restart sshd, sudo useradd devops,  sudo visudo,`.
+* This is Node:--> `sudo vi /etc/ssh/sshd_config, sudo systemctl restart sshd, sudo useradd devops,  sudo visudo, ssh-keygen`.
   
 * 1st step install java on host server
 * `su devops` create 1 directory `mkdir tomcat, cd tomcat, vi tomcat.yml and vi hosts` 
