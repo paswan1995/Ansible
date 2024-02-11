@@ -306,6 +306,10 @@ for the changes done to include default variables.
   
 ### Lets try to make this playbook work with centos 7
 
+for centos 7 u have to create a vm then ` sudo vi /etc/ssh/sshd_config , sudo systemctl restart sshd , sudo adduser centos7(whatever u want to go for name), ` set passwd now `sudo passwd centos7 , sudo visudo , ` exit and relogin after relogin ` ssh-keygen`  and now go into Acn do there ssh-keygen if not done there. Then `ssh-copy-id centos7@publicip` go with public ip . 
+![preview](images/a129.png)
+![preview](images/a130.png)
+
 * Problem 1: Package managers might be different
 * Ansible has a module called package. refer here: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html
 * If the package name is same
